@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "build",
+      "command": "bash -c '.vscode/build.sh ${workspaceFolder}'",
+      "args": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "compiler: cmake with ninja on mingw"
+    }
+  ],
+  "version": "2.0.0"
+}

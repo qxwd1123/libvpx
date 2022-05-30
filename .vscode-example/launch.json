@@ -1,0 +1,42 @@
+{
+    "version": "0.0.0",
+    "configurations": [
+        {
+            "name": "debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build_dir/vpxdec",
+            "args": [
+                "streams/vp90-2-22-svc_1280x720_1.webm",
+                "--noblit"
+            ],
+            "stopAtEntry": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "LSAN_OPTIONS",
+                    "value": "abort_on_error=1"
+                },
+                {
+                    "name": "ASAN_OPTIONS",
+                    "value": "abort_on_error=1"
+                },
+                {
+                    "name": "UBSAN_OPTIONS",
+                    "value": "abort_on_error=1"
+                }
+            ],
+            "externalConsole": false,
+            "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
