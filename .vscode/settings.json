@@ -1,0 +1,8 @@
+{
+    "cmake.debugConfig":{
+        "args": [
+            "${workspaceFolder}/testdata/sample.av1.ivf",
+            "-o", "${workspaceFolder}/testdata/sample.av1.ivf.out"
+        ],
+    }
+}

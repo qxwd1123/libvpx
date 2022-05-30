@@ -1,0 +1,43 @@
+{
+    "version": "0.0.0",
+    "configurations": [
+        {
+            "name": "debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/cmbuild/vpxdec",
+            "args": [
+                "${workspaceFolder}/test_data/vp91-2-04-yuv444.webm",
+                "-o",
+                "${workspaceFolder}/test_data_force/vp91-2-04-yuv444.webm.y4m"
+            ],
+            "stopAtEntry": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "LSAN_OPTIONS",
+                    "value": "verbosity=1:log_threads=1:abort_on_error=1"
+                },
+                {
+                    "name": "ASAN_OPTIONS",
+                    "value": "verbosity=1:log_threads=1:abort_on_error=1"
+                },
+                {
+                    "name": "UBSAN_OPTIONS",
+                    "value": "verbosity=1:log_threads=1:abort_on_error=1"
+                }
+            ],
+            "externalConsole": false,
+            // "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
