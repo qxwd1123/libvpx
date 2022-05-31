@@ -15,6 +15,8 @@ int y4m_write_file_header(char *buf, size_t len, int width, int height,
                           const struct VpxRational *framerate,
                           vpx_img_fmt_t fmt, unsigned int bit_depth) {
   const char *color;
+  if (bit_depth == 8 && fmt & VPX_IMG_FMT_HIGHBITDEPTH)
+    fmt ^= VPX_IMG_FMT_HIGHBITDEPTH;
   switch (bit_depth) {
     case 8:
       color = fmt == VPX_IMG_FMT_I444
