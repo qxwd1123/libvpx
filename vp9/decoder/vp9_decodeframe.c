@@ -2579,7 +2579,7 @@ static void read_bitdepth_colorspace_sampling(VP9_COMMON *cm,
   } else {
     cm->bit_depth = VPX_BITS_8;
 #if CONFIG_VP9_HIGHBITDEPTH
-    cm->use_highbitdepth = 0;
+    cm->use_highbitdepth = 1;
 #endif
   }
   cm->color_space = vpx_rb_read_literal(rb, 3);
@@ -2718,7 +2718,7 @@ static size_t read_uncompressed_header(VP9Decoder *pbi,
         cm->subsampling_y = cm->subsampling_x = 1;
         cm->bit_depth = VPX_BITS_8;
 #if CONFIG_VP9_HIGHBITDEPTH
-        cm->use_highbitdepth = 0;
+        cm->use_highbitdepth = 1;
 #endif
       }
 
