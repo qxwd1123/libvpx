@@ -67,3 +67,6 @@
 /vpxenc
 /vpxenc.dox
 TAGS
+build_dir
+streams
+.vscode
