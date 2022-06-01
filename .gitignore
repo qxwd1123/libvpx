@@ -67,3 +67,5 @@
 /vpxenc
 /vpxenc.dox
 TAGS
+cmbuild*
+test_data*
